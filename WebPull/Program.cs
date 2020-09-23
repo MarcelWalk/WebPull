@@ -48,10 +48,9 @@ namespace WebPull
                     {
                         Directory.Delete(ConfigurationManager.AppSettings["OutDir"], true);
                     }
-                    else
-                    {
-                        LibGit2Sharp.Repository.Clone(data.Repository.CloneUrl.ToString(), ConfigurationManager.AppSettings["OutDir"]);
-                    }
+           
+                    LibGit2Sharp.Repository.Clone(data.Repository.CloneUrl.ToString(), ConfigurationManager.AppSettings["OutDir"]);
+                   
 
                 }
                 else
