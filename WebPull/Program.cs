@@ -42,6 +42,9 @@ namespace WebPull
 
                     s.Write(hello, 0, hello.Length);
 
+                    if(Directory.Exists(ConfigurationManager.AppSettings["OutDir"]))
+                        Directory.Delete(ConfigurationManager.AppSettings["OutDir"]);
+                        
                     LibGit2Sharp.Repository.Clone(data.Repository.CloneUrl.ToString(), ConfigurationManager.AppSettings["OutDir"]);
                 }
 
