@@ -46,13 +46,7 @@ namespace WebPull
 
                     if (Directory.Exists(ConfigurationManager.AppSettings["OutDir"]))
                     {
-                        using (var repo = new LibGit2Sharp.Repository(ConfigurationManager.AppSettings["OutDir"]))
-                        {
-                            string logMessage = "";
-                            var remote = repo.Network.Remotes["origin"];
-                            var refSpecs = remote.FetchRefSpecs.Select(x => x.Specification);
-                            Commands.Fetch(repo, remote.Name, refSpecs, null, logMessage);
-                        }
+                        Directory.Delete(ConfigurationManager.AppSettings["OutDir"]);
                     }
                     else
                     {
@@ -64,7 +58,6 @@ namespace WebPull
                 {
                     byte[] hello = new byte[100];
                     hello = Encoding.Default.GetBytes("404");
-
                     s.Write(hello, 0, hello.Length);
                 }
 
