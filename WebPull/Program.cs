@@ -14,8 +14,15 @@ namespace WebPull
     {
         static void Main(string[] args)
         {
-            HookListener hook = new HookListener();
-            hook.Start();
+            while(true){
+                try{
+                    HookListener hook = new HookListener();
+                    hook.Start();
+                }catch{
+
+                }
+            }
+
         }
     }
 }
