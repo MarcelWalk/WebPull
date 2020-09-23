@@ -46,7 +46,7 @@ namespace WebPull
 
                     if (Directory.Exists(ConfigurationManager.AppSettings["OutDir"]))
                     {
-                        Directory.Delete(ConfigurationManager.AppSettings["OutDir"]);
+                        Directory.Delete(ConfigurationManager.AppSettings["OutDir"], true);
                     }
                     else
                     {
